@@ -1,14 +1,15 @@
+const webpack = require('webpack');
 module.exports = {
   type: 'react-app',
   webpack: {
+    aliases: {
+      modules: __dirname + '/node_modules',
+      jquery: 'modules/admin-lte/plugins/jQuery/jquery-2.2.3.min.js',
+      bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
+    },
     extra: {
-      // Example of adding an extra loader which isn't managed by nwb,
-      // assuming you've installed html-loader in your project.
       resolve: {
-        extensions: ['.js', '.jsx', '.scss', '.css'],
-        alias: {
-          modules: __dirname + '/node_modules'
-        }
+        extensions: ['.js', '.jsx', '.scss', '.css']
       },
       module: {
         rules: [{
@@ -20,9 +21,12 @@ module.exports = {
           }
         }]
       },
-      // Example of adding an extra plugin which isn't managed by nwb
       plugins: [
-
+        new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery',
+          'window.jQuery': 'jquery'
+        })
       ]
     }
   }

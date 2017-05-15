@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "admin-lte": "^2.3.11",
+    "babel-loader": "^7.0.0",
     "font-awesome": "^4.7.0",
     "ionicons": "^3.0.0",
     "nwb": "0.15.x",

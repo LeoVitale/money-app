@@ -1,9 +1,11 @@
 import React from 'react';
+import '../common/template/dependencies.js';
+
 
 const App = (props) => {
   return (
-    <div>
-      App
+    <div className="wrapper">
+      <h1>Appxxssssa</h1>
     </div>
   );
 };
